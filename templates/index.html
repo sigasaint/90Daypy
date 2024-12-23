@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siga Saint</title>
+    
+
+    <!-- Bootstrap CSS -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-5.3.3-dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Light/Dark Mode Toggle Button -->
+    <!--button class="toggle-mode btn btn-secondary">Toggle Dark Mode</button-->
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="sigasaint" data-description="Support me on Buy me a coffee!" data-message="Would you please buy me a coffee" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    
+    <!-- Header Section -->
+    <header class="bg-dark text-white py-4">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h3">Siga Saint</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+     <section id="hero" class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h2>Hi, I am Siga Saint</h2>
+            <p>Web Developer | Programmer | Problem Solver</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center">About Me</h2>
+            <p>My name is Siga Saint. It is an alias but i like to treat as my real name. Am a Computer Science currently waiting for A level results. My next step is study it in university but am not quite sure because am now able to use up to 9 programming languages without struggling. I mainly focus on python programming because am currently interested in Ml and Ai.</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center">My Portfolio</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="project1.jpg" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                          <h5 class="card-title">Project 1: Predictive algorithms and Image processing</h5>
+                            <p class="card-text">After dicovering the scikitlearn and scipy Python libraries, I have been timely invested in creating ml programs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="project2.jpg" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 2: E-commerce App</h5>
+                            <p class="card-text">In my country a lot of people are now focusing on creating and running apparel stores. Am working on creating an E-commerce online shop to affilite their products via my web from a 10 dollar monthly subscription .</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="project3.jpg" class="card-img-top" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 3: Blog Site</h5>
+                            <p class="card-text">A stylish Blog website to showcase my work and skills.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Contact Me</h2>
+            <p class="text-center">Feel free to reach out to me for collaborations, job opportunities, or just to say hello!</p>
+            <form id="contact-form" action="{{ url_for('send_email') }}" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Enter your message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <!-- Footer Section -->
+  <footer class="bg-dark text-white text-center py-4">
+    <p>&copy; 2024 Saint Inc. All Rights Reserved.</p>
+    <!-- Social Media Buttons -->
+    <div class="social-buttons-container">
+        <h2>Follow Us on Social Media</h2>
+        <div class="social-buttons">
+            <div>
+                <a href="https://www.patreon.com/SaintSiga" class="social-button patreon" target="_blank">
+                    <i class="fab fa-patreon"></i>
+                </a>
+                <span class="social-text">Support us on Patreon for exclusive content.</span>
+            </div>
+            <div>
+                <a href="https://www.pythonpathfinders.medium.com" class="social-button medium" target="_blank">
+                    <i class="fab fa-medium"></i>
+                </a>
+                <span class="social-text">Read our articles on Medium.</span>
+            </div>
+            <div>
+                <a href="https://www.x.com/saintispapi" class="social-button twitter" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <span class="social-text">Follow us on Twitter for updates.</span>
+            </div>
+        </div>
+    </div>
+  </footer>
+
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top">top</button>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress">
+        <div class="progress-bar"></div>
+    </div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="{{ url_for('static', filename='bootstrap-5.3.3-dist/js/bootstrap.min.js') }}"></script>
+
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
