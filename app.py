@@ -4,12 +4,14 @@ from flask_mail import Mail, Message
 app = Flask(__name__)
 
 # Configure Flask-Mail
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_SERVER'] = 'smtp.mailsender.net'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'Saint'
-app.config['MAIL_PASSWORD'] = 'ilovebrownies<3'
+app.config['MAIL_USERNAME'] = 'MS_AfSJp9@trial-jy7zpl9ydp0g5vx6.mlsender.net'
+app.config['MAIL_PASSWORD'] = 'q8hmQhKVurESEKaq'
 app.config['MAIL_DEFAULT_SENDER'] = 'sigasaint@gmail.com'
+
+
 
 mail = Mail(app)
 
@@ -24,7 +26,6 @@ def send_email():
         message = request.form['message']
     except KeyError:
         return "Missing form data, 400"
-
 
     msg = Message('New Contact Form Submission', recipients=['sigasaint@gmail.com'])
     msg.body = f"From: {email}\n\n{message}"

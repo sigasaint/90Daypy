@@ -1,54 +1,17 @@
 /* General Styles */
-body {
+.body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Light Theme (Default) */
-body {
-  background-color: #ffffff;
-  color: #333;
-}
-
-header {
+.header {
   background-color: #343a40;
 }
 
-footer {
-  background-color: #343a40;
-}
-
-/* Dark Theme */
-body.dark-mode {
-  background-color: #121212;
-  color: #f1f1f1;
-}
-
-header.dark-mode {
-background-color: #222;
-}
-
-footer.dark-mode {
-  background-color: #222;
-}
-
-button.toggle-mode {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 1.1em;
-  cursor: pointer;
-  position: fixed;
-  inset-block-end: 20px;
-  inset-inline-end: 20px;
-}
-
-button.toggle-mode:hover {
-  background-color: #444;
+.footer {
+  background-color: aliceblue;
 }
 
 /* Scroll to Top Button */
@@ -123,23 +86,8 @@ button.toggle-mode:hover {
 
 /* Hero Section */
 #hero {
-  padding: 80px 0;
-  color: white;
-  text-align: center;
-  background-size: cover;
-  background-color: chocolate;
-  background-position: center;
-}
-
-#hero h2 {
-  font-size: 3em;
-  margin-block-end: 10px;
-  color: #333;
-}
-
-#hero p {
-  font-size: 1.5em;
-}
+  background-color: wheat;
+  }
 
 /* About Section */
 #about {
@@ -169,7 +117,7 @@ button.toggle-mode:hover {
 
 .card {
   margin-block-end: 30px;
-  border: none;
+  border: transparent;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
@@ -272,4 +220,7 @@ footer p {
 }
 .twitter:hover {
   background-color: #0c87d2;
+}
+#up-button {
+  margin-block-start: 20px;
 }

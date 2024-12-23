@@ -14,29 +14,44 @@
 </head>
 <body>
 
-    <!-- Light/Dark Mode Toggle Button -->
+     <!-- Scroll to Top Button -->
+    <button class="scroll-to-top">top</button>
+
     <!--button class="toggle-mode btn btn-secondary">Toggle Dark Mode</button-->
     <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="sigasaint" data-description="Support me on Buy me a coffee!" data-message="Would you please buy me a coffee" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
     
     <!-- Header Section -->
     <header class="bg-dark text-white py-4">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1 class="h3">Siga Saint</h1>
-            <nav>
-                <ul class="nav">
-                    <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav class="navbar navbar-expand-xxl navbar-dark bg-dark" aria-label="Seventh navbar example">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Siga Saint</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleXxl" aria-controls="navbarsExampleXxl" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+        
+              <div class="collapse navbar-collapse" id="navbarsExampleXxl">
+                <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+                  <li class="nav-item">
+                  </li>
+                  <li class="nav-item"><a class="nav-link text-white" href="#about">About Me</a></li>
+                  <li class="nav-item"><a class="nav-link text-white" href="#portfolio">My Portfolio</a></li>
+                  <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact Me</a></li>
+              </div>
+            </div>
+          </nav>
     </header>
 
     <!-- Hero Section -->
      <section id="hero" class="bg-primary text-white text-center py-5">
-        <div class="container">
-            <h2>Hi, I am Siga Saint</h2>
-            <p>Web Developer | Programmer | Problem Solver</p>
+        <div class="px-4 py-5 my-5 text-center">
+            <img class="d-block mx-auto mb-4" src="static/imgs/S.png" alt="" width="72" height="72">
+            <h1 class="display-5 fw-bold">Siga Saint Infomatics</h1>
+            <h2 class="lead mb-4">Welcome to Sigasaint info, I built this website as a way to advertise and showcase my awesome portfolio</h2>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">Software Engineer | Python Programmer | ML & AI</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -44,7 +59,7 @@
     <section id="about" class="py-5">
         <div class="container">
             <h2 class="text-center">About Me</h2>
-            <p>My name is Siga Saint. It is an alias but i like to treat as my real name. Am a Computer Science currently waiting for A level results. My next step is study it in university but am not quite sure because am now able to use up to 9 programming languages without struggling. I mainly focus on python programming because am currently interested in Ml and Ai.</p>
+            <p>Hi! I'm a 20 year old self taught developer with four years of hands on experience in the tech industry. Currently studying Computer Science, I specialize in predictive algorithms, image processing and website development. My passion lies in creating innovative solutions that empower businesses and enhance user experiences. Lets connect and bring ideas to life</p>
         </div>
     </section>
 
@@ -55,28 +70,28 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="project1.jpg" class="card-img-top" alt="Project 1">
+                        <img src="{{ url_for('static', filename='imgs/prj1.jpg') }}" class="card-img-top" alt="Project 1">
                         <div class="card-body">
-                          <h5 class="card-title">Project 1: Predictive algorithms and Image processing</h5>
-                            <p class="card-text">After dicovering the scikitlearn and scipy Python libraries, I have been timely invested in creating ml programs.</p>
+                          <h5 class="card-title"><strong>Predictive algorithms and Image processing</strong></h5>
+                            <p class="card-text">Levaraging Scikit-learn and SciPy, I develop predictive algorithms that analyze data patterns and enhance image processing capabilities. My goal is to deliver efficient solutions for complex challenges in data analysis.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="project2.jpg" class="card-img-top" alt="Project 2">
+                        <img src="{{ url_for('static', filename='imgs/prj2.jpg') }}" class="card-img-top" alt="Project 2">
                         <div class="card-body">
-                            <h5 class="card-title">Project 2: E-commerce App</h5>
-                            <p class="card-text">In my country a lot of people are now focusing on creating and running apparel stores. Am working on creating an E-commerce online shop to affilite their products via my web from a 10 dollar monthly subscription .</p>
+                            <h5 class="card-title"><strong>Dynamic and Static Website Development</strong></h5>
+                            <p class="card-text">I create tailored websites for clients, whether dynamic or static. My focus is on delivering user-friendly designs that meet client needs, ensuring a seemless online experience.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="project3.jpg" class="card-img-top" alt="Project 3">
+                        <img src="{{ url_for('static', filename='imgs/prj3.jpg') }}" class="card-img-top" alt="Project 3">
                         <div class="card-body">
-                            <h5 class="card-title">Project 3: Blog Site</h5>
-                            <p class="card-text">A stylish Blog website to showcase my work and skills.</p>
+                            <h5 class="card-title"><strong>E-Commerce and Dropshipping Platform</strong></h5>
+                            <p class="card-text">I am bulding an e-commerce shop that offers a dropshipping platform for shop owners. For just $10 per month, I provide a comprehensive solution to help businesses thrive in the online marketplace.</p>
                         </div>
                     </div>
                 </div>
@@ -108,7 +123,6 @@
     </section>
 
     <!-- Footer Section -->
-    <!-- Footer Section -->
   <footer class="bg-dark text-white text-center py-4">
     <p>&copy; 2024 Saint Inc. All Rights Reserved.</p>
     <!-- Social Media Buttons -->
@@ -137,12 +151,8 @@
     </div>
   </footer>
 
-
-    <!-- Scroll to Top Button -->
-    <button class="scroll-to-top">top</button>
-
     <!-- Scroll Progress Bar -->
-    <div class="scroll-progress">
+   <div class="scroll-progress">
         <div class="progress-bar"></div>
     </div>
 
