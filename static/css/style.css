@@ -6,20 +6,11 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.header {
-  background-color: #343a40;
-}
-
-.footer {
-  background-color: aliceblue;
-}
-
 /* Scroll to Top Button */
 .scroll-to-top {
   position: fixed;
   inset-block-end: 20px;
   inset-inline-end: 20px;
-  background-color: #007bff;
   color: white;
   border: none;
   padding: 15px;
@@ -50,6 +41,7 @@
   inline-size: 0;
   background-color: #007bff;
 }
+
 
 /* Preloader Styles */
 .preloader {
@@ -89,20 +81,72 @@
   background-color: wheat;
   }
 
-/* About Section */
+/* About Me Section */
 #about {
-  background-color: #f8f9fa;
-  padding: 60px 0;
+  background-color: #f8f9fa;  /* Light background */
+  padding-block-start: 50px;
+  padding-block-end: 50px;
 }
 
 #about h2 {
-  font-size: 2.5em;
-  margin-block-end: 20px;
+  font-size: 2.5rem;
+  color: #333;
 }
 
 #about p {
-  font-size: 1.2em;
+  font-size: 1.2rem;
+  color: #555;
   line-height: 1.6;
+}
+
+/* Profile Image Styles */
+#profile-image {
+  inline-size: 200px;
+  block-size: 200px;
+  object-fit: cover;
+  border: 5px solid #007bff;  /* Border color */
+}
+
+/* Responsive Text Alignment */
+@media (max-width: 768px) {
+  #about h2 {
+      font-size: 2rem;
+  }
+  #about p {
+      font-size: 1rem;
+  }
+  #profile-image {
+      inline-size: 150px;
+      block-size: 150px;
+  }
+}
+
+/* Modal Styling */
+.modal-content {
+  border-radius: 10px;
+}
+
+.modal-header {
+  background-color: #007bff;
+  color: white;
+}
+
+.modal-body {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.modal-footer .btn-secondary {
+  background-color: #6c757d;
+}
+
+/* Custom Styles for Feedback Form */
+#feedbackModal .form-control {
+  border-radius: 5px;
+}
+
+#feedbackModal button {
+  border-radius: 5px;
 }
 
 /* Portfolio Section */
@@ -162,65 +206,92 @@ form button:hover {
   background-color: #0056b3;
 }
 
-/* Footer */
+#up-button {
+  position: fixed;
+  inset-block-end: 20px;
+  inset-inline-end: 20px;
+  display: none;
+  z-index: 1000;
+}
+
+.header.fixed-top {
+  position: fixed;
+  inset-block-start: 0;
+  inline-size: 100%;
+  z-index: 1030;
+  transition: top 0.3s;
+}
+.header.hidden {
+  inset-block-start: -100px;
+}
+
+/* Footer Styles */
 footer {
   background-color: #343a40;
   color: white;
-  font-size: small;
   padding: 20px 0;
 }
 
 footer p {
   margin: 0;
 }
-.social-buttons-container {
-  text-align: start;
-  margin: 20px 0;
+
+.social-icon {
+  margin: 0 15px;
+  font-size: 1.5em;
+  color: white;
+  transition: color 0.3s;
 }
-.social-buttons {
+
+.social-icon:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+/* Optional: Adjust the size of the social media icons */
+.social-icon {
+  font-size: 1.8em;
+}
+
+/* Style for Cards with Gray Background */
+.card {
+  background-color: #f8f9fa;  /* Light Gray Background */
+  border: 1px solid #ddd;     /* Border around the card */
+  border-radius: 8px;         /* Rounded corners */
+}
+
+.card .card-body {
+  padding: 20px;
+}
+
+.card .card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card .card-text {
+  font-size: 1rem;
+  margin-block-end: 20px;
+}
+
+.card .btn {
+  background-color: gray;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.card .btn:hover {
+  background-color: gray;  /* Darker shade on hover */
+}
+
+/* Optional: Add a shadow effect */
+.card.shadow-sm {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-block-start: 10px;
-}
-.social-button {
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
-  font-size: 18px;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-  inline-size: fit-content;
-}
-.social-button i {
-  margin-inline-end: 10px;
-}
-.social-text {
-  display: inline-block;
-  margin-inline-start: 10px;
-  color: white;
-  font-size: 16px;
-}
-.patreon {
-  background-color: #ff424d;
-}
-.patreon:hover {
-  background-color: #e5363f;
-}
-.medium {
-  background-color: #00ab6c;
-}
-.medium:hover {
-  background-color: #009e5a;
-}
-.twitter {
-  background-color: #1da1f2;
-}
-.twitter:hover {
-  background-color: #0c87d2;
-}
-#up-button {
-  margin-block-start: 20px;
+  justify-content: space-between;
+  block-size: 100%;
 }

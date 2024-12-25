@@ -3,16 +3,6 @@
 const toggleButton = document.querySelector('.toggle-mode');
 const body = document.body;
 
-toggleButton.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    // Optional: Save the mode preference in localStorage
-    if (body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
-        localStorage.setItem('theme', 'light');
-    }
-});
-
 // Load saved theme from localStorage
 window.addEventListener('load', () => {
     const savedTheme = localStorage.getItem('theme');
@@ -21,22 +11,19 @@ window.addEventListener('load', () => {
     }
 });
 
-// Scroll to Top Button
-const scrollToTopButton = document.querySelector('.scroll-to-top');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        scrollToTopButton.style.display = 'block';
+toggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    // Save the mode preference in localStorage
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
     } else {
-        scrollToTopButton.style.display = 'none';
+        localStorage.setItem('theme', 'light');
     }
 });
 
-scrollToTopButton.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+// Scroll to top
+document.querySelector('#up-button').addEventListener('click', () => {
+    window.scrollTo({ insetBlockStart: 0, behavior: 'smooth' });
 });
 
 // Scroll Progress Indicator
@@ -48,17 +35,37 @@ window.addEventListener('scroll', () => {
     const scrollPercentage = (scrollPosition / scrollTotal) * 100;
     progressBar.style.width = scrollPercentage + '%';
 });
-
-// Preloader
-const preloader = document.querySelector('.preloader');
-
+// Hide preloader
 window.addEventListener('load', () => {
-    preloader.style.visibility = 'hidden'; // Hide preloader when the page is loaded
+    document.querySelector('.preloader').style.display = 'none';
 });
 
-// Optionally, show the preloader for a set period before hiding
+// Hide preloader
 window.addEventListener('load', () => {
-    setTimeout(() => {
-        preloader.style.visibility = 'hidden';
-    }, 1000); // Wait 1 second before hiding
+    document.querySelector('.preloader').style.display = 'none';
 });
+
+// Hide and show header on scroll
+let lastScrollTop = 0;
+const header = document.querySelector('header');
+const upButton = document.querySelector('#up-button');
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+        header.classList.add('hidden');
+    } else {
+        header.classList.remove('hidden');
+    }
+    lastScrollTop = scrollTop;
+
+    // Show or hide the up button
+    if (scrollTop > 100) {
+        upButton.style.display = 'block';
+    } else {
+        upButton.style.display = 'none';
+    }
+});
+// Dynamic Copyright Year
+const currentYear = new Date().getFullYear();
+document.getElementById('current-year').textContent = currentYear;

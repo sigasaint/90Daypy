@@ -1,19 +1,15 @@
 from flask import Flask, request, render_template, redirect, url_for
-from flask_mail import Mail, Message
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 app = Flask(__name__)
 
-# Configure Flask-Mail
-app.config['MAIL_SERVER'] = 'smtp.mailsender.net'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'MS_AfSJp9@trial-jy7zpl9ydp0g5vx6.mlsender.net'
-app.config['MAIL_PASSWORD'] = 'q8hmQhKVurESEKaq'
-app.config['MAIL_DEFAULT_SENDER'] = 'sigasaint@gmail.com'
-
-
-
-mail = Mail(app)
+# SMTP configuration
+SMTP_SERVER = 'smtp.gmail.com'
+SMTP_PORT = 587
+SMTP_USERNAME = 'saintsiga@gmail.com'
+SMTP_PASSWORD = 'ilovebrownies<33'  # Use an app password if 2-Step Verification is enabled
 
 @app.route('/')
 def index():
@@ -25,13 +21,41 @@ def send_email():
         email = request.form['email']
         message = request.form['message']
     except KeyError:
-        return "Missing form data, 400"
+        return "Missing form data", 400
 
-    msg = Message('New Contact Form Submission', recipients=['sigasaint@gmail.com'])
-    msg.body = f"From: {email}\n\n{message}"
+    subject = "New Contact Form Submission"
+    sender_email = SMTP_USERNAME
+    recipient_email = 'sigasaint@gmail.com'
 
+    # Create the email content
+    text = f"From: {email}\n\n{message}"
+    html = f"""
+    <html>
+    <body>
+        <h2>New Contact Form Submission</h2>
+        <p><strong>From:</strong> {email}</p>
+        <p><strong>Message:</strong></p>
+        <p>{message}</p>
+    </body>
+    </html>
+    """
+
+    # Create the email message
+    msg = MIMEMultipart('alternative')
+    msg['Subject'] = subject
+    msg['From'] = sender_email
+    msg['To'] = recipient_email
+    part1 = MIMEText(text, 'plain')
+    part2 = MIMEText(html, 'html')
+    msg.attach(part1)
+    msg.attach(part2)
+
+    # Send the email
     try:
-        mail.send(msg)
+        with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+            server.starttls()  # Secure the connection
+            server.login(SMTP_USERNAME, SMTP_PASSWORD)
+            server.sendmail(sender_email, recipient_email, msg.as_string())
         return redirect(url_for('index'))
     except Exception as e:
         return str(e)
