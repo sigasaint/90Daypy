@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-xxl navbar-dark bg-dark" aria-label="Seventh navbar example">
             <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center" href="#">
-                    <img src="{{ url_for('static', filename='imgs/th.jpg') }}" alt="Avatar" class="rounded-circle me-2" style="inline-size: 40px; block-size: 40px;">
+                    <img src="{{ url_for('static', filename='imgs/avatar.jpg') }}" alt="Avatar" class="rounded-circle me-2" style="inline-size: 40px; block-size: 40px;">
                     Siga Saint
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleXxl" aria-controls="navbarsExampleXxl" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +42,7 @@
     <!-- Hero Section -->
     <section id="hero" class="text-white text-center py-5" style="background: url('{{ url_for('static', filename='imgs/hero-bg.jpg') }}') no-repeat center center;">
         <div class="px-4 py-5 my-5 text-center">
-            <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='imgs/S.png') }}" alt="" width="200" height="200">
+            <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='imgs/logo.png') }}" alt="" width="200" height="200">
             <h1 class="display-5 fw-bold">Siga Saint Infomatics</h1>
             <h2 class="lead mb-4">Welcome to Sigasaint info, I built this website as a way to advertise and showcase my awesome portfolio</h2>
             <div class="col-lg-6 mx-auto">
@@ -59,7 +59,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-4 text-center mb-4 mb-md-0">
-                    <img src="{{ url_for('static', filename='imgs/av2.jpg') }}" alt="Your Name" class="img-fluid rounded-circle" id="profile-image">
+                    <img src="{{ url_for('static', filename='imgs/about-img.jpg') }}" alt="Your Name" class="img-fluid rounded-circle" id="profile-image">
                 </div>
                 <div class="col-md-8">
                     <h2 class="text-md-left text-md-left">About Me</h2>
@@ -79,7 +79,14 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Here you can include more information about your career, education, hobbies, or any other details you'd like to share with your visitors. You can use this space to add your story, how you started, what you're passionate about, and your future goals.</p>
+                    <h6><strong>Hobbies :</strong></h6>
+                    <p>| Music🎶 [DRAKE] | Gaming🎮 [COD] | Writing📝 [Music] | Blogging📚 [Tutorials] | Coding💻 [Python] | Going for a walk🚶‍♀️ [Road Side] | Drinking coffee☕ [😉] |</p>
+                    <h6><strong>Favourite Sports :</strong></h6>
+                    <p>~Basketball🏀 [Ja Morant] ~Field Hockey🏑[Me]</p>
+                    <h6><strong>Series and Movies :</strong></h6>
+                    <p>So am a really huge fan of japanese animation, all animation actually but some of my favourites were | Bungo Stray Dogs | The seven deadly sins | ReZero | God Of Highschool| Your Lie In April |. As for movies i enjoy a chill while story packed and full of twists production, I pick | Bubble | Weathering with you | Your Name | </p>
+                    <h6><strong>Movements I support</strong></h6>
+                    <p>I believe in making a difference. I actively support environmental sustainability initiatives and advocate for mental health awareness. I am passionate about creating a more inclusive society and championing social justice causes.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -94,7 +101,7 @@
             <h2 class="text-center">My Portfolio</h2>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="card">
+                    <div class="card" style="background-color: aliceblue;">
                         <img src="{{ url_for('static', filename='imgs/prj1.jpg') }}" class="card-img-top" alt="Project 1">
                         <div class="card-body">
                             <h5 class="card-title"><strong>Predictive algorithms and Image processing</strong></h5>
@@ -103,7 +110,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card">
+                    <div class="card" style="background-color: aliceblue;">
                         <img src="{{ url_for('static', filename='imgs/prj2.jpg') }}" class="card-img-top" alt="Project 2">
                         <div class="card-body">
                             <h5 class="card-title"><strong>Dynamic and Static Website Development</strong></h5>
@@ -112,7 +119,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card">
+                    <div class="card" style="background-color: aliceblue;">
                         <img src="{{ url_for('static', filename='imgs/prj3.jpg') }}" class="card-img-top" alt="Project 3">
                         <div class="card-body">
                             <h5 class="card-title"><strong>E-Commerce and Dropshipping Platform</strong></h5>
@@ -131,7 +138,7 @@
                 {% for feedback in feedbacks %}
                 <div class="col-md-4">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-body" style="background-color: aliceblue;">
                             <h5 class="card-title">{{ feedback.name }}</h5>
                             <p class="card-text">{{ feedback.message }}</p>
                         </div>
@@ -144,7 +151,7 @@
 
     <!-- Contact Section -->
     <section id="contact" class="py-5">
-        <div class="container">
+        <div class="container" style="background-color: aliceblue;">
             <h2 class="text-center">Contact Me</h2>
             <p class="text-center">Feel free to reach out to me for collaborations, job opportunities, or just to say hello!</p>
             <form id="contact-form" action="{{ url_for('send_email') }}" method="POST">
@@ -219,9 +226,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <h6>Q: What is this website about?</h6>
+                    <h6><strong>Q: What is this website about?</strong></h6>
                     <p>A: This website is a portfolio showcasing web development projects and services.</p>
-                    <h6>Q: How can I contact you?</h6>
+                    <h6><strong>Q: How can I contact you?</strong></h6>
                     <p>A: You can contact me via the contact form or through my social media links.</p>
                 </div>
                 <div class="modal-footer">

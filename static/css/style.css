@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   transition: background-color 0.3s ease, color 0.3s ease;
+  box-sizing: border-box;
 }
 
 /* Scroll to Top Button */
@@ -21,10 +22,6 @@
   z-index: 1000;
 }
 
-.scroll-to-top:hover {
-  background-color: #0056b3;
-}
-
 /* Scroll Progress Indicator */
 .scroll-progress {
   position: fixed;
@@ -39,7 +36,7 @@
 .progress-bar {
   block-size: 100%;
   inline-size: 0;
-  background-color: #007bff;
+  background-color: #4B3D26;
 }
 
 
@@ -65,7 +62,7 @@
   inline-size: 40px;
   block-size: 40px;
   margin: -20px 0 0 -20px;
-  border: 4px solid #3498db;
+  border: 4px solid #4B3D26;
   border-block-start: 4px solid #f3f3f3;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -130,7 +127,7 @@
 }
 
 .modal-header {
-  background-color: #007bff;
+  background-color: #4B3D26;
   color: white;
 }
 
@@ -197,7 +194,7 @@ form .form-control {
 }
 
 form button {
-  background-color: #007bff;
+  background-color: #4B3D26;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -206,7 +203,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #0056b3;
+  background-color: #4B3D26;
 }
 
 #up-button {
@@ -247,7 +244,7 @@ footer p {
 }
 
 .social-icon:hover {
-  color: #007bff; /* Change color on hover */
+  color: #4B3D26; /* Change color on hover */
 }
 
 /* Optional: Adjust the size of the social media icons */
@@ -297,4 +294,24 @@ footer p {
   flex-direction: column;
   justify-content: space-between;
   block-size: 100%;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  #hero {
+      padding: 3rem 0;
+  }
+
+  #hero .lead {
+      font-size: 1rem;
+  }
+
+  #about, #contact {
+      padding: 1rem 0;
+  }
+
+  .navbar-brand img {
+      inline-size: 30px;
+      block-size: 30px;
+  }
 }
