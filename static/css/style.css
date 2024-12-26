@@ -78,8 +78,11 @@
 
 /* Hero Section */
 #hero {
-  background-color: wheat;
-  }
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 5rem 0;
+}
 
 /* About Me Section */
 #about {
@@ -104,7 +107,7 @@
   inline-size: 200px;
   block-size: 200px;
   object-fit: cover;
-  border: 5px solid #007bff;  /* Border color */
+  border: 5px solid gray;  /* Border color */
 }
 
 /* Responsive Text Alignment */
@@ -210,18 +213,18 @@ form button:hover {
   position: fixed;
   inset-block-end: 20px;
   inset-inline-end: 20px;
-  display: none;
+  display: -webkit-inline-box;
   z-index: 1000;
 }
 
-.header.fixed-top {
+header.fixed-top {
   position: fixed;
   inset-block-start: 0;
   inline-size: 100%;
   z-index: 1030;
   transition: top 0.3s;
 }
-.header.hidden {
+header.hidden {
   inset-block-start: -100px;
 }
 

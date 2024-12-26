@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Siga Saint</title>
-    
 
     <!-- Bootstrap CSS -->
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
@@ -18,20 +17,22 @@
     <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="sigasaint" data-description="Support me on Buy me a coffee!" data-message="Would you please buy me a coffee" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
     
     <!-- Header Section -->
-     <header class="bg-dark text-white py-4 fixed-top">
+    <header class="bg-dark text-white py-4 fixed-top">
         <nav class="navbar navbar-expand-xxl navbar-dark bg-dark" aria-label="Seventh navbar example">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Siga Saint</a>
-                <button class="scroll-to-top">top</button>
-                <button class="toggle-mode btn btn-secondary">Toggle Dark Mode</button>
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="{{ url_for('static', filename='imgs/th.jpg') }}" alt="Avatar" class="rounded-circle me-2" style="inline-size: 40px; block-size: 40px;">
+                    Siga Saint
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleXxl" aria-controls="navbarsExampleXxl" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="navbarsExampleXxl">
                     <ul class="navbar-nav me-auto mb-2 mb-xl-0">
-                        <li class="nav-item"><a class="nav-link text-white" href="#about">About Me</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="#portfolio">My Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact Me</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -39,15 +40,15 @@
     </header>
 
     <!-- Hero Section -->
-     <section id="hero" class="bg-primary text-white text-center py-5">
+    <section id="hero" class="text-white text-center py-5" style="background: url('{{ url_for('static', filename='imgs/hero-bg.jpg') }}') no-repeat center center;">
         <div class="px-4 py-5 my-5 text-center">
-            <img class="d-block mx-auto mb-4" src="static/imgs/S.png" alt="" width="72" height="72">
+            <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='imgs/S.png') }}" alt="" width="200" height="200">
             <h1 class="display-5 fw-bold">Siga Saint Infomatics</h1>
             <h2 class="lead mb-4">Welcome to Sigasaint info, I built this website as a way to advertise and showcase my awesome portfolio</h2>
             <div class="col-lg-6 mx-auto">
                 <p class="lead mb-4">Software Engineer | Python Programmer | ML & AI</p>
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-
+                    <!-- Add any buttons or links here -->
                 </div>
             </div>
         </div>
@@ -58,7 +59,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-4 text-center mb-4 mb-md-0">
-                    <img src="{{ url_for('static', filename='imgs/S.png') }}" alt="Your Name" class="img-fluid rounded-circle" id="profile-image">
+                    <img src="{{ url_for('static', filename='imgs/av2.jpg') }}" alt="Your Name" class="img-fluid rounded-circle" id="profile-image">
                 </div>
                 <div class="col-md-8">
                     <h2 class="text-md-left text-md-left">About Me</h2>
@@ -119,6 +120,24 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+    <!-- Feedback Section -->
+    <section id="feedback" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Feedback</h2>
+            <div class="row">
+                {% for feedback in feedbacks %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ feedback.name }}</h5>
+                            <p class="card-text">{{ feedback.message }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -241,18 +260,18 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id = "feedbackModal" action="{{ url_for('send_email') }}" method="POST">
+                    <form id="feedback-form" action="{{ url_for('submit_feedback') }}" method="POST">
                         <div class="mb-3">
-                            <label for="feedbackName" class="form-label">name</label>
-                            <input type="text" class="form-control" id="feedbackName" placeholder="Your name">
+                            <label for="feedbackName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="feedbackName" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="mb-3">
-                            <label for="feedbackEmail" class="form-label">email</label>
-                            <input type="email" class="form-control" id="feedbackEmail" placeholder="Your email">
+                            <label for="feedbackEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="feedbackEmail" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="mb-3">
-                            <label for="feedbackMessage" class="form-label">message</label>
-                            <textarea class="form-control" id="feedbackMessage" rows="3" placeholder="Your feedback"></textarea>
+                            <label for="feedbackMessage" class="form-label">Message</label>
+                            <textarea class="form-control" id="feedbackMessage" name="message" rows="3" placeholder="Your Feedback" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit Feedback</button>
                     </form>
@@ -262,8 +281,24 @@
                 </div>
             </div>
         </div>
-    </div>    
-        
+    </div>
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Success</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Your message has been sent successfully. I will get back to you soon!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>   
 
     <!-- Scroll Progress Bar -->
    <div class="scroll-progress">
@@ -281,5 +316,17 @@
 
     <!-- Custom JS -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    <!-- Show success modal if message was sent -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+                    successModal.show();
+                });
+            </script>
+        {% endif %}
+    {% endwith %}
 </body>
 </html>
