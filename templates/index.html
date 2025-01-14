@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Saint Inc and Siga Saint for my portfolio">
     <title>Siga Saint</title>
 
     <!-- Bootstrap CSS -->
@@ -80,14 +81,65 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <h6><strong>Hobbies :</strong></h6>
-                    <p>| Music🎶 [DRAKE] | Gaming🎮 [COD] | Writing📝 [Music] | Blogging📚 [Tutorials] | Coding💻 [Python] | Going for a walk🚶‍♀️ [Road Side] | Drinking coffee☕ [😉] |</p>
-                    <h6><strong>Favourite Sports :</strong></h6>
-                    <p>~Basketball🏀 [Ja Morant] ~Field Hockey🏑[Me]</p>
-                    <h6><strong>Series and Movies :</strong></h6>
-                    <p>So am a really huge fan of japanese animation, all animation actually but some of my favourites were | Bungo Stray Dogs | The seven deadly sins | ReZero | God Of Highschool| Your Lie In April |. As for movies i enjoy a chill while story packed and full of twists production, I pick | Bubble | Weathering with you | Your Name | </p>
-                    <h6><strong>Movements I support</strong></h6>
-                    <p>I believe in making a difference. I actively support environmental sustainability initiatives and advocate for mental health awareness. I am passionate about creating a more inclusive society and championing social justice causes.</p>
+                    <div class="card" style="background-color: #4B3D26;">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    Music Preferance
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-muted">Hip-Hop/RnB - Aime Lofi</h5>
+                                    <p class="card-text">I don't really know how and when but ive always had a high Preferance for both these sounds.Follow me on spotify btw and lets share more music together.</p>
+                                    <a href="#" class="btn btn-primary">Follow Me On spotify</a>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <p class="h5 row">Artist<span class="badge rounded-pill bg-secondary">Drake</span></p>
+                                    <p class="h5 row">Album<span class="badge rounded-pill bg-primary">FATD-SHE</span></p>
+                                    <p class="h5 row">Song<span class="badge rounded-pill bg-dark">Red Button</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="card" style="background-color: aliceblue;">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    Tv/Favourite Shows
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-muted">Anime - Crime Series</h5>
+                                    <p class="card-text">Ive always had a strong preference for Anime whether from Japan or America, I just go with the best script and animation quality. As for real life character series am on the black crime side e.g Power Book 2.</p>
+                                    <a href="#" class="btn btn-primary">Watchlist</a>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <p class="h5 row">Anime<span class="badge rounded-pill bg-secondary">Your Lie In April</span></p>
+                                    <p class="h5 row">Series<span class="badge rounded-pill bg-primary">Power : Book 2</span></p>
+                                    <p class="h5 row">Sequel<span class="badge rounded-pill bg-dark">Harry Porter</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="card" style="background-color: yellow;">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    Sports 
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-muted">NBA - Basketball</h5>
+                                    <p class="card-text">Growing up ive had an opportunity to play many sports includng soccer and Hockey but as i grew i became more facinated with the NBA more than any sports and its link with Hip-Hop.</p>
+                                    <a href="#" class="btn btn-primary">Basketball takes on X</a>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <p class="h5 row">Team<span class="badge rounded-pill bg-secondary">LA Lakers</span></p>
+                                    <p class="h5 row">Player<span class="badge rounded-pill bg-primary">Lebron James</span></p>
+                                    <p class="h5 row">Era<span class="badge rounded-pill bg-dark">LeBron KD Steph Era</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -161,11 +213,11 @@
             <form id="contact-form" action="{{ url_for('send_email') }}" method="POST">
                 <div class="mb-3">
                     <label for="name" class="form-label">Your Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                    <input type="text" class="form-control" autocomplete="name" id="name" placeholder="Enter your name" required>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                    <input type="email" class="form-control" autocomplete="email" id="email" name="email" placeholder="Your Email" required>
                 </div>
                 <div class="mb-3">
                     <label for="message" class="form-label">Message</label>
@@ -275,11 +327,11 @@
                     <form id="feedback-form" action="{{ url_for('submit_feedback') }}" method="POST">
                         <div class="mb-3">
                             <label for="feedbackName" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="feedbackName" name="name" placeholder="Your Name" required>
+                            <input type="text" class="form-control" autocomplete="name" id="feedbackName" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="mb-3">
                             <label for="feedbackEmail" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="feedbackEmail" name="email" placeholder="Your Email" required>
+                            <input type="email" class="form-control" autocomplete="email" id="feedbackEmail" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="mb-3">
                             <label for="feedbackMessage" class="form-label">Message</label>

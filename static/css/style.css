@@ -5,6 +5,7 @@
   padding: 0;
   transition: background-color 0.3s ease, color 0.3s ease;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 /* Scroll to Top Button */
@@ -133,7 +134,26 @@
 
 .modal-body {
   font-size: 1.1rem;
-  color: #333;
+  color: #333}
+
+h3 {
+    font-size: 1.4rem;
+    color: #343a40;
+}
+
+img {
+    max-inline-size: 100%;
+    border-radius: 10px;
+    margin-block-start: 15px;
+}
+
+ul {
+    list-style-type: disc;
+    padding-inline-start: 20px;
+}
+
+iframe {
+    border-radius: 10px;
 }
 
 .modal-footer .btn-secondary {
