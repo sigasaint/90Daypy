@@ -50,6 +50,9 @@
                 <p class="lead mb-4">Software Engineer | Python Programmer | ML & AI</p>
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                     <!-- Add any buttons or links here -->
+                    <button class="btn btn-primary chat-trigger" data-bs-toggle="modal" data-bs-target="#chatModal">
+                        <i class="fas fa-comment"></i> Chat with AI
+                    </button>
                 </div>
             </div>
         </div>
@@ -228,7 +231,27 @@
         </div>
     </section>
     <hr>
-
+    <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="chatModalLabel">Chat with AI Assistant</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="chat-container" id="chatBody">
+                        <!-- Messages will be inserted here -->
+                    </div>
+                    <div class="chat-input mt-3">
+                        <div class="input-group">
+                            <input type="text" id="userInput" class="form-control" placeholder="Type your message...">
+                            <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Footer Section -->
      <footer class="bg-dark text-white text-center py-4">
         <div class="container">

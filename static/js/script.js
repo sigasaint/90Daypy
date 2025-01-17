@@ -74,3 +74,49 @@ window.addEventListener('scroll', () => {
         }
     }
 });
+
+// Chat functionality
+async function sendMessage() {
+    const userInput = document.getElementById('userInput');
+    const chatBody = document.getElementById('chatBody');
+    
+    const message = userInput.value.trim();
+    if (!message) return;
+
+    // Add user message
+    appendMessage('user', message);
+    userInput.value = '';
+
+    try {
+        const response = await fetch('/get_response', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ message: message })
+        });
+        
+        const data = await response.json();
+        appendMessage('bot', data.response);
+    } catch (error) {
+        console.error('Error:', error);
+        appendMessage('bot', 'Sorry, something went wrong!');
+    }
+}
+
+function appendMessage(sender, message) {
+    const chatBody = document.getElementById('chatBody');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${sender}-message`;
+    messageDiv.textContent = message;
+    chatBody.appendChild(messageDiv);
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+// Initialize chat modal
+document.addEventListener('DOMContentLoaded', function() {
+    const chatModal = document.getElementById('chatModal');
+    chatModal.addEventListener('shown.bs.modal', function() {
+        document.getElementById('userInput').focus();
+    });
+});

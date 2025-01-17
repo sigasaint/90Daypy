@@ -1,10 +1,11 @@
-from flask import Flask, request, render_template, redirect, url_for, flash
+from flask import Flask, request, render_template, redirect, url_for, flash, jsonify
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from flask_sqlalchemy import SQLAlchemy
 from email.mime.text import MIMEText
 from dotenv import load_dotenv
 import os
+#from chatbot import chat
 
 app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY')
@@ -102,6 +103,13 @@ def submit_feedback():
 
     flash('Your feedback has been submitted successfully!', 'success')
     return redirect(url_for('index'))
+
+
+#@app.route("/get_response", methods=["POST"])
+#def get_bot_response():
+  #  message = request.json['message']
+   # response = chat(message)
+    #return jsonify({"response": response})
 
 if __name__ == '__main__':
     app.run(debug=True)
