@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Saint Inc and Siga Saint for my portfolio">
+    <meta name="description" content="This a portfolio website by Siga Saint Under Saint Inc to show off his amazing skills , projects and personality with the people around him. This web was sorely built to attract businesses and individuals interested in what i have to offer through the perfomance and robustness of my produce.">
     <title>Siga Saint</title>
 
     <!-- Bootstrap CSS -->
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-5.3.3-dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
 <body>
 
@@ -22,7 +22,7 @@
         <nav class="navbar navbar-expand-xxl navbar-dark bg-dark" aria-label="Seventh navbar example">
             <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center" href="#">
-                    <img src="{{ url_for('static', filename='imgs/avatar.jpg') }}" alt="Avatar" class="rounded-circle me-2" style="inline-size: 40px; block-size: 40px;">
+                    <img src="{{ url_for('static', filename='imgs/avatar.webp') }}" alt="Avatar" class="rounded-circle me-2" style="inline-size: 40px; block-size: 40px;">
                     Siga Saint
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleXxl" aria-controls="navbarsExampleXxl" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,9 +41,9 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="text-white text-center py-5" style="background: url('{{ url_for('static', filename='imgs/hero-bg.jpg') }}') no-repeat center center;">
+    <section id="hero" class="text-white text-center py-5" style="background: url('{{ url_for('static', filename='imgs/hero-bg.webp') }}') no-repeat center center;">
         <div class="px-4 py-5 my-5 text-center">
-            <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='imgs/logo.png') }}" alt="" width="200" height="200">
+            <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='imgs/logo.webp') }}" alt="logo" width="200" height="200">
             <h1 class="display-5 fw-bold">Siga Saint Infomatics</h1>
             <h2 class="lead mb-4">Welcome to Sigasaint info, I built this website as a way to advertise and showcase my awesome portfolio</h2>
             <div class="col-lg-6 mx-auto">
@@ -61,7 +61,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-4 text-center mb-4 mb-md-0">
-                    <img src="{{ url_for('static', filename='imgs/about-img.jpg') }}" alt="Your Name" class="img-fluid rounded-circle" id="profile-image">
+                    <img src="{{ url_for('static', filename='imgs/about-img.webp') }}" alt="Siga Saint" class="img-fluid rounded-circle" id="profile-image">
                 </div>
                 <div class="col-md-8">
                     <h2 class="text-md-left text-md-left">About Me</h2>
@@ -74,7 +74,7 @@
         </div>
     </section>
     <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="aboutModalLabel">More About Me</h5>
@@ -156,7 +156,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card" style="background-color: aliceblue;">
-                        <img src="{{ url_for('static', filename='imgs/prj1.jpg') }}" class="card-img-top" alt="Project 1">
+                        <img src="{{ url_for('static', filename='imgs/prj1.webp') }}" class="card-img-top" alt="Project 1">
                         <div class="card-body">
                             <h5 class="card-title"><strong>Predictive algorithms and Image processing</strong></h5>
                             <p class="card-text">Levaraging Scikit-learn and SciPy, I develop predictive algorithms that analyze data patterns and enhance image processing capabilities. My goal is to deliver efficient solutions for complex challenges in data analysis.</p>
@@ -165,7 +165,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card" style="background-color: aliceblue;">
-                        <img src="{{ url_for('static', filename='imgs/prj2.jpg') }}" class="card-img-top" alt="Project 2">
+                        <img src="{{ url_for('static', filename='imgs/prj2.webp') }}" class="card-img-top" alt="Project 2">
                         <div class="card-body">
                             <h5 class="card-title"><strong>Dynamic and Static Website Development</strong></h5>
                             <p class="card-text">I create tailored websites for clients, whether dynamic or static. My focus is on delivering user-friendly designs that meet client needs, ensuring a seemless online experience.</p>
@@ -174,7 +174,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card" style="background-color: aliceblue;">
-                        <img src="{{ url_for('static', filename='imgs/prj3.jpg') }}" class="card-img-top" alt="Project 3">
+                        <img src="{{ url_for('static', filename='imgs/prj3.webp') }}" class="card-img-top" alt="Project 3">
                         <div class="card-body">
                             <h5 class="card-title"><strong>E-Commerce and Dropshipping Platform</strong></h5>
                             <p class="card-text">I am bulding an e-commerce shop that offers a dropshipping platform for shop owners. For just $10 per month, I provide a comprehensive solution to help businesses thrive in the online marketplace.</p>
@@ -375,11 +375,10 @@
     </div>
 
     <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="{{ url_for('static', filename='bootstrap-5.3.3-dist/js/bootstrap.min.js') }}"></script>
 
     <!-- Custom JS -->
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}" async></script>
 
     <!-- Show success modal if message was sent -->
     {% with messages = get_flashed_messages(with_categories=true) %}
